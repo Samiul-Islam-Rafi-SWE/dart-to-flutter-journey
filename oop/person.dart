@@ -3,13 +3,13 @@ class person {
   String _lastName;
   String _gender;
   String _university;
-  int age;
+  int _age;
 
   person(
     this._firstName,
     this._lastName,
     this._gender,
-    this.age,
+    this._age,
     this._university,
   ) {
     print(_getBirthYear());
@@ -30,18 +30,30 @@ class person {
   String getGender() {
     return _gender;
   }
+
   //setter
   void changeUniversity(String university) {
     if (university == 'DIU' || university == 'BUFT') {
       _university = university;
     }
   }
+
   //getter
   String getUniversity() {
     return _university;
   }
 
+  int getage() {
+    return _age;
+  }
+
+  void set setage(int newage) {
+    if (newage >= 12 && newage <= 100) {
+      _age = newage;
+    }
+  }
+
   int _getBirthYear() {
-    return 2026 - age;
+    return 2026 - _age;
   }
 }
